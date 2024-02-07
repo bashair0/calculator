@@ -122,8 +122,80 @@ input:checked + .custom-radio {
   background-color: hsla(6, 63%, 50%, 0.55);
 }
 
+.calc-screen {
+  background-color: var(--clr-screen-background);
+  padding: 2rem 1rem;
+  margin-block: 2rem 1rem;
+  border-radius: 5px;
+  text-align: right;
+  color: var(--clr-white-text);
+}
+
+.calc-buttons {
+  background-color: var(--clr-keypad-background);
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 22%;
+  height: 3rem;
+  /* padding: 0.8rem 2rem; */
+
+  color: var(--clr-dark-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(2px);
+}
+
+.primary-buttons {
+  background-color: var(--clr-key-background-3);
+  box-shadow: 0 3px var(--clr-key-shadow-3);
+}
+
+.secondary-buttons {
+  background-color: var(--clr-key-background-1);
+  box-shadow: 0 3px var(--clr-key-shadow-1);
+  color: var(--clr-white-text);
+}
+
+.accent-button {
+  background-color: var(--clr-key-background-2);
+  box-shadow: 0 3px var(--clr-key-shadow-2);
+  color: var(--clr-white-text);
+}
+
+.primary-buttons:hover {
+  background-color: var(--clr-white-text);
+}
+.secondary-buttons:hover {
+  background-color: hsl(224, 51%, 76%);
+}
+.accent-button:hover {
+  background-color: hsl(5, 93%, 67%);
+}
+.result-buttons {
+  width: 48%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 *,
