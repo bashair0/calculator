@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="script.js" defer></script>
+    <title>Calculator</title>
+  </head>
+  <body class="flex">
+    <main class="calculator">
+      <nav class="nav flex">
+        <h1 class="logo">calc</h1>
+        <div class="flex theme-btns">
+          <h2 class="theme-header">theme</h2>
+          <div>
+            <div class="labels flex">
+              <label for="blue">1</label>
+
+              <label for="grey">2</label>
+
+              <label for="violet">3</label>
+            </div>
+            <div class="inputs flex">
+              <div class="custom-radio dark-blue__theme">
+                <input type="radio" name="theme" id="blue" class="radio-btns" />
+              </div>
+              <div class="custom-radio light-grey__theme">
+                <input type="radio" name="theme" id="grey" class="radio-btns" />
+              </div>
+              <div class="custom-radio dark-violet__theme">
+                <input
+                  type="radio"
+                  name="theme"
+                  id="violet"
+                  class="radio-btns" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </main>
+  </body>
+</html>

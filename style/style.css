@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+:root {
+  --clr-main-background: hsl(222, 26%, 31%);
+  --clr-keypad-background: hsl(223, 31%, 20%);
+  --clr-screen-background: hsl(224, 36%, 15%);
+  --clr-key-background-1: hsl(225, 21%, 49%);
+  --clr-key-shadow-1: hsl(224, 28%, 35%);
+  --clr-key-background-2: hsl(6, 63%, 50%);
+  --clr-key-shadow-2: hsl(6, 70%, 34%);
+  --clr-key-background-3: hsl(30, 25%, 89%);
+  --clr-key-shadow-3: hsl(28, 16%, 65%);
+  --clr-dark-text: hsl(221, 14%, 31%);
+  --clr-white-text: hsl(0, 0%, 100%);
+}
+
+.light-grey__theme {
+  --clr-main-background: hsl(0, 0%, 90%);
+  --clr-keypad-background: hsl(0, 5%, 81%);
+  --clr-screen-background: hsl(0, 0%, 93%);
+  --clr-key-background-1: hsl(185, 42%, 37%);
+  --clr-key-shadow-1: hsl(185, 58%, 25%);
+  --clr-key-background-2: hsl(25, 98%, 40%);
+  --clr-key-shadow-2: hsl(25, 99%, 27%);
+  --clr-key-background-3: hsl(45, 7%, 89%);
+  --clr-key-shadow-3: hsl(35, 11%, 61%);
+  --clr-dark-text: hsl(60, 10%, 19%);
+  --clr-white-text: hsl(0, 0%, 100%);
+}
+
+.dark-violet__theme {
+  --clr-main-background: hsl(268, 75%, 9%);
+  --clr-keypad-background: hsl(268, 71%, 12%);
+  --clr-screen-background: hsl(268, 71%, 12%);
+  --clr-key-background-1: hsl(281, 89%, 26%);
+  --clr-key-shadow-1: hsl(285, 91%, 52%);
+  --clr-key-background-2: hsl(176, 100%, 44%);
+  --clr-key-shadow-2: hsl(177, 92%, 70%);
+  --clr-key-background-3: hsl(268, 47%, 21%);
+  --clr-key-shadow-3: hsl(290, 70%, 36%);
+  --clr-dark-text: hsl(198, 20%, 13%);
+  --clr-white-text: hsl(0, 0%, 100%);
+  --clr-yellow-text: hsl(52, 100%, 62%);
+}
+
+body {
+  background-color: var(--clr-main-background);
+  font-family: "League Spartan", sans-serif;
+  font-size: 2rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 30%;
+}
+
+.nav {
+  width: 100%;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-white-text);
+}
+
+h2,
+label {
+  font-size: 13px;
+  color: var(--clr-white-text);
+}
+
+.theme-btns {
+  gap: 1.5rem;
+}
+
+.theme-header {
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+.labels {
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+}
+
+.inputs {
+  gap: 0.3rem;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: var(--clr-keypad-background);
+  padding: 0.1rem 0.3rem;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+.custom-radio {
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+}
+
+.active-theme {
+  background-color: var(--clr-key-background-2);
+}
+
+input:checked + .custom-radio {
+  background-color: var(--clr-key-background-2);
+}
+
+.custom-radio:hover {
+  background-color: hsla(6, 63%, 50%, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
