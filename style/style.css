@@ -124,11 +124,15 @@ input:checked + .custom-radio {
 
 .calc-screen {
   background-color: var(--clr-screen-background);
-  padding: 2rem 1rem;
+  height: 6rem;
+  padding: 1rem;
   margin-block: 2rem 1rem;
   border-radius: 5px;
   text-align: right;
   color: var(--clr-white-text);
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .calc-buttons {

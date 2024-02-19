@@ -41,30 +41,41 @@
       </nav>
 
       <div class="calc-screen">
-        <p class="result">0</p>
+        <p class="display display-first__num" data-previous-operand></p>
+        <p class="display display-second__num" data-current-operand></p>
       </div>
 
       <div class="calc-buttons flex">
-        <button class="btn primary-buttons" value="7">7</button>
-        <button class="btn primary-buttons" value="8">8</button>
-        <button class="btn primary-buttons" value="9">9</button>
-        <button class="btn secondary-buttons" value="del">Del</button>
-        <button class="btn primary-buttons" value="4">4</button>
-        <button class="btn primary-buttons" value="5">5</button>
-        <button class="btn primary-buttons" value="6">6</button>
-        <button class="btn primary-buttons" value="+">+</button>
-        <button class="btn primary-buttons" value="1">1</button>
-        <button class="btn primary-buttons" value="2">2</button>
-        <button class="btn primary-buttons" value="3">3</button>
-        <button class="btn primary-buttons" value="-">-</button>
-        <button class="btn primary-buttons" value=".">.</button>
-        <button class="btn primary-buttons" value="0">0</button>
-        <button class="btn primary-buttons" value="/">/</button>
-        <button class="btn primary-buttons" value="×">×</button>
-        <button class="btn secondary-buttons result-buttons" value="reset">
+        <button class="btn primary-buttons" data-number>7</button>
+        <button class="btn primary-buttons" data-number>8</button>
+        <button class="btn primary-buttons" data-number>9</button>
+        <button id="del-btn" class="btn secondary-buttons" data-delete>
+          Del
+        </button>
+        <button class="btn primary-buttons" data-number>4</button>
+        <button class="btn primary-buttons" data-number>5</button>
+        <button class="btn primary-buttons" data-number>6</button>
+        <button class="btn primary-buttons" data-operation>+</button>
+        <button class="btn primary-buttons" data-number>1</button>
+        <button class="btn primary-buttons" data-number>2</button>
+        <button class="btn primary-buttons" data-number>3</button>
+        <button class="btn primary-buttons" data-operation>-</button>
+        <button class="btn primary-buttons" data-number>.</button>
+        <button class="btn primary-buttons" data-number>0</button>
+        <button class="btn primary-buttons" data-operation>÷</button>
+        <button class="btn primary-buttons" data-operation>×</button>
+        <button
+          id="reset-btn"
+          class="btn secondary-buttons result-buttons"
+          data-reset>
           Reset
         </button>
-        <button class="btn accent-button result-buttons" value="=">=</button>
+        <button
+          id="equal-btn"
+          class="btn accent-button result-buttons"
+          data-equal>
+          =
+        </button>
       </div>
     </main>
   </body>
