@@ -104,22 +104,10 @@ input[type="radio"] {
 
 .custom-radio {
   cursor: pointer;
-  background-color: transparent;
+  /* background-color: red; */
   border-radius: 50%;
   height: 13px;
   width: 13px;
-}
-
-.active-theme {
-  background-color: var(--clr-key-background-2);
-}
-
-input:checked + .custom-radio {
-  background-color: var(--clr-key-background-2);
-}
-
-.custom-radio:hover {
-  background-color: hsla(6, 63%, 50%, 0.55);
 }
 
 .calc-screen {
@@ -128,7 +116,7 @@ input:checked + .custom-radio {
   padding: 1rem;
   margin-block: 2rem 1rem;
   border-radius: 5px;
-  text-align: right;
+
   color: var(--clr-white-text);
   display: flex;
   align-items: center;
