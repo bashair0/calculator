@@ -162,7 +162,7 @@ function appendNumber (number) {
 
 function getDisplayNumber (number) {
   if (typeof number === 'string') {
-    number
+    return number
   }
   const stringNumber = number.toString()
   const integerDigits = parseFloat(stringNumber.split('.')[0])
