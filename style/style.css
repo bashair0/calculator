@@ -4,13 +4,18 @@
   --clr-keypad-background: hsl(223, 31%, 20%);
   --clr-screen-background: hsl(224, 36%, 15%);
   --clr-key-background-1: hsl(225, 21%, 49%);
+  --clr-key-bg-hover-1: hsl(224, 51%, 76%);
   --clr-key-shadow-1: hsl(224, 28%, 35%);
   --clr-key-background-2: hsl(6, 63%, 50%);
+  --clr-key-bg-hover-2: hsl(6, 93%, 67%);
   --clr-key-shadow-2: hsl(6, 70%, 34%);
   --clr-key-background-3: hsl(30, 25%, 89%);
+  --clr-key-bg-hover-3: hsl(0, 0%, 100%);
   --clr-key-shadow-3: hsl(28, 16%, 65%);
-  --clr-dark-text: hsl(221, 14%, 31%);
-  --clr-white-text: hsl(0, 0%, 100%);
+  --clr-key-text-1: hsl(221, 14%, 31%);
+  --clr-key-text-2: hsl(0, 0%, 100%);
+  --clr-key-text-3: hsl(0, 0%, 100%);
+  --clr-header-text: hsl(0, 0%, 100%);
 }
 
 .light-grey__theme {
@@ -18,13 +23,18 @@
   --clr-keypad-background: hsl(0, 5%, 81%);
   --clr-screen-background: hsl(0, 0%, 93%);
   --clr-key-background-1: hsl(185, 42%, 37%);
+  --clr-key-bg-hover-1: hsl(185, 41%, 56%);
   --clr-key-shadow-1: hsl(185, 58%, 25%);
   --clr-key-background-2: hsl(25, 98%, 40%);
+  --clr-key-bg-hover-2: hsl(25, 100%, 61%);
   --clr-key-shadow-2: hsl(25, 99%, 27%);
   --clr-key-background-3: hsl(45, 7%, 89%);
+  --clr-key-bg-hover-3: hsl(0, 0%, 100%);
   --clr-key-shadow-3: hsl(35, 11%, 61%);
-  --clr-dark-text: hsl(60, 10%, 19%);
-  --clr-white-text: hsl(0, 0%, 100%);
+  --clr-key-text-1: hsl(60, 10%, 19%);
+  --clr-key-text-2: hsl(0, 0%, 100%);
+  --clr-key-text-3: hsl(0, 0%, 100%);
+  --clr-header-text: hsl(60, 10%, 19%);
 }
 
 .dark-violet__theme {
@@ -32,14 +42,19 @@
   --clr-keypad-background: hsl(268, 71%, 12%);
   --clr-screen-background: hsl(268, 71%, 12%);
   --clr-key-background-1: hsl(281, 89%, 26%);
+  --clr-key-bg-hover-1: hsl(280, 56%, 44%);
   --clr-key-shadow-1: hsl(285, 91%, 52%);
   --clr-key-background-2: hsl(176, 100%, 44%);
+  --clr-key-bg-hover-2: hsl(177, 100%, 79%);
   --clr-key-shadow-2: hsl(177, 92%, 70%);
   --clr-key-background-3: hsl(268, 47%, 21%);
+  --clr-key-bg-hover-3: hsl(268, 54%, 44%);
   --clr-key-shadow-3: hsl(290, 70%, 36%);
-  --clr-dark-text: hsl(198, 20%, 13%);
-  --clr-white-text: hsl(0, 0%, 100%);
-  --clr-yellow-text: hsl(52, 100%, 62%);
+
+  --clr-key-text-1: hsl(52, 100%, 62%);
+  --clr-key-text-2: hsl(0, 0%, 100%);
+  --clr-key-text-3: hsl(198, 20%, 13%);
+  --clr-header-text: hsl(52, 100%, 62%);
 }
 
 body {
@@ -62,52 +77,77 @@ body {
   width: 100%;
   margin-top: 3rem;
   justify-content: space-between;
+  color: var(--clr-header-text);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--clr-white-text);
 }
 
-h2,
+h6,
 label {
-  font-size: 13px;
-  color: var(--clr-white-text);
+  font-size: 0.8rem;
+  position: relative;
 }
 
-.theme-btns {
-  gap: 1.5rem;
+h6 {
+  left: 140px;
 }
 
-.theme-header {
-  text-transform: uppercase;
-  align-self: flex-end;
-}
-
-.labels {
-  justify-content: space-between;
-  padding-inline: 0.5rem;
-}
-
-.inputs {
-  gap: 0.3rem;
-  justify-content: space-between;
-  border-radius: 20px;
+.input {
+  position: relative;
+  height: 25px;
+  width: 65px;
+  border-radius: 30px;
   background-color: var(--clr-keypad-background);
-  padding: 0.1rem 0.3rem;
 }
 
 input[type="radio"] {
   appearance: none;
+  cursor: pointer;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 30px;
+  top: 5px;
+  transition: 0.5s;
 }
 
-.custom-radio {
-  cursor: pointer;
-  /* background-color: red; */
-  border-radius: 50%;
-  height: 13px;
-  width: 13px;
+[id="theme1"] {
+  left: 5px;
+}
+
+[id="theme2"] {
+  left: 25px;
+}
+
+[id="theme3"] {
+  left: 45px;
+}
+
+input:checked {
+  background-color: var(--clr-key-background-2);
+}
+
+input:hover {
+  background-color: var(--clr-key-shadow-2);
+}
+
+label {
+  top: -30px;
+}
+
+label[for="theme1"] {
+  left: 10px;
+}
+
+label[for="theme2"] {
+  left: 16px;
+}
+
+label[for="theme3"] {
+  left: 20px;
 }
 
 .calc-screen {
@@ -116,11 +156,18 @@ input[type="radio"] {
   padding: 1rem;
   margin-block: 2rem 1rem;
   border-radius: 5px;
+  text-align: right;
+  color: var(--clr-header-text);
+}
 
-  color: var(--clr-white-text);
-  display: flex;
-  align-items: center;
-  justify-content: end;
+.display-previous__operand {
+  height: 25px;
+  font-size: 1.5rem;
+  color: var(--clr-key-text-1);
+}
+
+.display-current__operand {
+  height: 30px;
 }
 
 .calc-buttons {
@@ -136,9 +183,6 @@ input[type="radio"] {
 .btn {
   width: 22%;
   height: 3rem;
-  /* padding: 0.8rem 2rem; */
-
-  color: var(--clr-dark-text);
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 5px;
@@ -153,28 +197,29 @@ input[type="radio"] {
 .primary-buttons {
   background-color: var(--clr-key-background-3);
   box-shadow: 0 3px var(--clr-key-shadow-3);
+  color: var(--clr-key-text-1);
 }
 
 .secondary-buttons {
   background-color: var(--clr-key-background-1);
   box-shadow: 0 3px var(--clr-key-shadow-1);
-  color: var(--clr-white-text);
+  color: var(--clr-key-text-2);
 }
 
 .accent-button {
   background-color: var(--clr-key-background-2);
   box-shadow: 0 3px var(--clr-key-shadow-2);
-  color: var(--clr-white-text);
+  color: var(--clr-key-text-3);
 }
 
 .primary-buttons:hover {
-  background-color: var(--clr-white-text);
+  background-color: var(--clr-key-bg-hover-3);
 }
 .secondary-buttons:hover {
-  background-color: hsl(224, 51%, 76%);
+  background-color: var(--clr-key-bg-hover-1);
 }
 .accent-button:hover {
-  background-color: hsl(5, 93%, 67%);
+  background-color: var(--clr-key-bg-hover-2);
 }
 .result-buttons {
   width: 48%;

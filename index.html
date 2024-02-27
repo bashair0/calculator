@@ -9,49 +9,43 @@
   </head>
   <body class="flex">
     <main class="calculator">
-      <nav class="nav flex">
+      <nav class="nav flex header">
         <h1 class="logo">calc</h1>
-        <div class="flex theme-btns">
-          <h2 class="theme-header">theme</h2>
-          <div>
-            <div class="labels flex">
-              <label for="blue">1</label>
+        <h6>THEME</h6>
+        <div class="div">
+          <div class="input">
+            <input id="theme1" type="radio" name="theme" value="0" checked />
+            <label for="theme1">1</label>
 
-              <label for="grey">2</label>
+            <input
+              id="theme2"
+              type="radio"
+              value="1"
+              name="theme"
+              data-theme-two />
+            <label for="theme2">2</label>
 
-              <label for="violet">3</label>
-            </div>
-            <div class="inputs flex">
-              <div class="custom-radio dark-blue__theme" id="radio-one">
-                <input type="radio" name="theme" id="blue" class="radio-btns" />
-              </div>
-              <div class="custom-radio light-grey__theme" id="radio-two">
-                <input type="radio" name="theme" id="grey" class="radio-btns" />
-              </div>
-              <div class="custom-radio dark-violet__theme" id="radio-three">
-                <input
-                  type="radio"
-                  name="theme"
-                  id="violet"
-                  class="radio-btns" />
-              </div>
-            </div>
+            <input
+              id="theme3"
+              type="radio"
+              value="2"
+              name="theme"
+              data-theme-three />
+            <label for="theme3">3</label>
           </div>
         </div>
       </nav>
 
       <div class="calc-screen">
-        <p class="display display-first__num" data-previous-operand></p>
-        <p class="display display-second__num" data-current-operand></p>
+        <p class="display-previous__operand" data-previous-operand></p>
+        <p class="display-current__operand" data-current-operand>0</p>
       </div>
 
       <div class="calc-buttons flex">
         <button class="btn primary-buttons" data-number>7</button>
         <button class="btn primary-buttons" data-number>8</button>
         <button class="btn primary-buttons" data-number>9</button>
-        <button id="del-btn" class="btn secondary-buttons" data-delete>
-          Del
-        </button>
+        <button class="btn secondary-buttons" data-delete>Del</button>
         <button class="btn primary-buttons" data-number>4</button>
         <button class="btn primary-buttons" data-number>5</button>
         <button class="btn primary-buttons" data-number>6</button>
@@ -64,18 +58,10 @@
         <button class="btn primary-buttons" data-number>0</button>
         <button class="btn primary-buttons" data-operation>÷</button>
         <button class="btn primary-buttons" data-operation>×</button>
-        <button
-          id="reset-btn"
-          class="btn secondary-buttons result-buttons"
-          data-reset>
+        <button class="btn secondary-buttons result-buttons" data-reset>
           Reset
         </button>
-        <button
-          id="equal-btn"
-          class="btn accent-button result-buttons"
-          data-equal>
-          =
-        </button>
+        <button class="btn accent-button result-buttons" data-equal>=</button>
       </div>
     </main>
   </body>

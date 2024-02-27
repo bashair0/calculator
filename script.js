@@ -14,6 +14,55 @@ let operator = ''
 let previousOperand = ''
 let currentOperand = ''
 
+let theme = localStorage.getItem('theme')
+const radioButtons = document.querySelectorAll('input')
+
+const enableSecondTheme = () => {
+  document.body.classList.add('light-grey__theme')
+  localStorage.setItem('theme', 'second')
+}
+
+const disableSecondTheme = () => {
+  document.body.classList.remove('light-grey__theme')
+}
+
+const disableThirdTheme = () => {
+  document.body.classList.remove('dark-violet__theme')
+}
+
+const enableThirdTheme = () => {
+  document.body.classList.add('dark-violet__theme')
+  localStorage.setItem('theme', 'third')
+}
+
+if (theme === 'second') {
+  enableSecondTheme()
+  disableThirdTheme()
+} else if (theme === 'third') {
+  enableThirdTheme()
+  disableSecondTheme()
+} else if (theme === null) {
+  disableSecondTheme()
+  disableThirdTheme()
+}
+
+radioButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    theme = localStorage.getItem('theme')
+    if (button.value == 0) {
+      disableSecondTheme()
+      disableThirdTheme()
+      localStorage.setItem('theme', null)
+    } else if (button.value == 1) {
+      enableSecondTheme()
+      disableThirdTheme()
+    } else {
+      enableThirdTheme()
+      disableSecondTheme()
+    }
+  })
+})
+
 /* ********** */
 /* FUNCTIONS */
 /* ********** */
@@ -69,8 +118,8 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', () => {
   getResult()
   updateDisplay()
-  previousOperandTextElement.textContent = previousOperand
-  currentOperandTextElement.textContent = currentOperand
+  /* previousOperandTextElement.textContent = previousOperand
+  currentOperandTextElement.textContent = currentOperand */
 })
 
 resetButton.addEventListener('click', () => {
@@ -84,7 +133,7 @@ deleteButton.addEventListener('click', () => {
 })
 
 function getResult () {
-  if (previousOperand === '' || currentOperand === '') return
+  if (previousOperand === '' && currentOperand === '') return
   currentOperand = operate(
     operator,
     parseFloat(previousOperand),
@@ -112,6 +161,9 @@ function appendNumber (number) {
 }
 
 function getDisplayNumber (number) {
+  if (typeof number === 'string') {
+    number
+  }
   const stringNumber = number.toString()
   const integerDigits = parseFloat(stringNumber.split('.')[0])
   const decimalDigits = stringNumber.split('.')[1]
@@ -147,8 +199,8 @@ function handleOperator (op) {
     previousOperand = operate()
     currentOperand = ''
     operator = op
-    previousOperandTextElement.textContent = `${previousOperand} ${operator}`
-    currentOperandTextElement.textContent = currentOperand
+    /* previousOperandTextElement.textContent = `${previousOperand} ${operator}`
+    currentOperandTextElement.textContent = currentOperand */
   } else {
     operator = op
     previousOperand = currentOperand
