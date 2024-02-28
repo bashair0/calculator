@@ -71,7 +71,18 @@ body {
 }
 
 .calculator {
-  width: 30%;
+  width: 90%;
+}
+
+@media only screen and (min-width: 48em) {
+  .calculator {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 54.375em) {
+  .calculator {
+    width: 30%;
+  }
 }
 
 .nav {
@@ -82,7 +93,7 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
@@ -93,7 +104,7 @@ label {
 }
 
 h6 {
-  left: 140px;
+  left: 20%;
 }
 
 .input {
@@ -182,7 +193,7 @@ label[for="theme3"] {
 }
 
 .btn {
-  width: 22%;
+  width: 20%;
   height: 3rem;
   font-size: 1.5rem;
   font-weight: 700;
@@ -223,7 +234,7 @@ label[for="theme3"] {
   background-color: var(--clr-key-bg-hover-2);
 }
 .result-buttons {
-  width: 48%;
+  width: 46%;
 }
 
 button {
