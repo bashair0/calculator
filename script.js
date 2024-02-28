@@ -22,6 +22,7 @@ const radioButtons = document.querySelectorAll('input')
 const themeOneButton = document.querySelector('[data-theme-one]')
 const themeTwoButton = document.querySelector('[data-theme-two]')
 const themeThreeButton = document.querySelector('[data-theme-three]')
+themeOneButton.style.background = 'hsl(6, 63%, 50%)'
 
 const enableFirstTheme = () => {
   localStorage.setItem('theme', 'first')
