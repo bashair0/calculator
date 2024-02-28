@@ -10,12 +10,13 @@
   --clr-key-bg-hover-2: hsl(6, 93%, 67%);
   --clr-key-shadow-2: hsl(6, 70%, 34%);
   --clr-key-background-3: hsl(30, 25%, 89%);
-  --clr-key-bg-hover-3: hsl(0, 0%, 100%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-key-bg-hover-3: var(--clr-white);
   --clr-key-shadow-3: hsl(28, 16%, 65%);
   --clr-key-text-1: hsl(221, 14%, 31%);
-  --clr-key-text-2: hsl(0, 0%, 100%);
-  --clr-key-text-3: hsl(0, 0%, 100%);
-  --clr-header-text: hsl(0, 0%, 100%);
+  --clr-key-text-2: var(--clr-white);
+  --clr-key-text-3: var(--clr-white);
+  --clr-header-text: var(--clr-white);
 }
 
 .light-grey__theme {
@@ -29,11 +30,11 @@
   --clr-key-bg-hover-2: hsl(25, 100%, 61%);
   --clr-key-shadow-2: hsl(25, 99%, 27%);
   --clr-key-background-3: hsl(45, 7%, 89%);
-  --clr-key-bg-hover-3: hsl(0, 0%, 100%);
+  --clr-key-bg-hover-3: var(--clr-white);
   --clr-key-shadow-3: hsl(35, 11%, 61%);
   --clr-key-text-1: hsl(60, 10%, 19%);
-  --clr-key-text-2: hsl(0, 0%, 100%);
-  --clr-key-text-3: hsl(0, 0%, 100%);
+  --clr-key-text-2: var(--clr-white);
+  --clr-key-text-3: var(--clr-white);
   --clr-header-text: hsl(60, 10%, 19%);
 }
 
@@ -50,11 +51,11 @@
   --clr-key-background-3: hsl(268, 47%, 21%);
   --clr-key-bg-hover-3: hsl(268, 54%, 44%);
   --clr-key-shadow-3: hsl(290, 70%, 36%);
-
-  --clr-key-text-1: hsl(52, 100%, 62%);
-  --clr-key-text-2: hsl(0, 0%, 100%);
+  --clr-yellow: hsl(52, 100%, 62%);
+  --clr-key-text-1: var(--clr-yellow);
+  --clr-key-text-2: var(--clr-white);
   --clr-key-text-3: hsl(198, 20%, 13%);
-  --clr-header-text: hsl(52, 100%, 62%);
+  --clr-header-text: var(--clr-yellow);
 }
 
 body {
@@ -126,9 +127,9 @@ input[type="radio"] {
   left: 45px;
 }
 
-input:checked {
+/* input:checked {
   background-color: var(--clr-key-background-2);
-}
+} */
 
 input:hover {
   background-color: var(--clr-key-shadow-2);

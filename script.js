@@ -14,51 +14,84 @@ let operator = ''
 let previousOperand = ''
 let currentOperand = ''
 
+/* ************ */
+/* THEME BUTTONS */
+/* ************ */
 let theme = localStorage.getItem('theme')
 const radioButtons = document.querySelectorAll('input')
+const themeOneButton = document.querySelector('[data-theme-one]')
+const themeTwoButton = document.querySelector('[data-theme-two]')
+const themeThreeButton = document.querySelector('[data-theme-three]')
+
+const enableFirstTheme = () => {
+  localStorage.setItem('theme', 'first')
+  themeOneButton.style.background = 'hsl(6, 63%, 50%)'
+}
+
+const disableFirstTheme = () => {
+  themeOneButton.style.background = ''
+}
 
 const enableSecondTheme = () => {
   document.body.classList.add('light-grey__theme')
   localStorage.setItem('theme', 'second')
+  themeTwoButton.style.background = 'hsl(25, 98%, 40%)'
 }
 
 const disableSecondTheme = () => {
   document.body.classList.remove('light-grey__theme')
+  themeTwoButton.style.background = ''
 }
 
 const disableThirdTheme = () => {
   document.body.classList.remove('dark-violet__theme')
+  themeThreeButton.style.background = ''
 }
 
 const enableThirdTheme = () => {
   document.body.classList.add('dark-violet__theme')
   localStorage.setItem('theme', 'third')
+  themeThreeButton.style.background = 'hsl(176, 100%, 44%)'
 }
 
-if (theme === 'second') {
-  enableSecondTheme()
-  disableThirdTheme()
-} else if (theme === 'third') {
-  enableThirdTheme()
-  disableSecondTheme()
-} else if (theme === null) {
-  disableSecondTheme()
-  disableThirdTheme()
+switch (theme) {
+  case 'first':
+    enableFirstTheme()
+    disableSecondTheme()
+    disableThirdTheme()
+    break
+  case 'second':
+    enableSecondTheme()
+    disableFirstTheme()
+    disableThirdTheme()
+    break
+  case 'third':
+    enableThirdTheme()
+    disableFirstTheme()
+    disableSecondTheme()
+    break
 }
 
 radioButtons.forEach(button => {
   button.addEventListener('click', () => {
     theme = localStorage.getItem('theme')
-    if (button.value == 0) {
-      disableSecondTheme()
-      disableThirdTheme()
-      localStorage.setItem('theme', null)
-    } else if (button.value == 1) {
-      enableSecondTheme()
-      disableThirdTheme()
-    } else {
-      enableThirdTheme()
-      disableSecondTheme()
+
+    switch (button.value) {
+      case '0':
+        enableFirstTheme()
+        disableSecondTheme()
+        disableThirdTheme()
+        break
+      case '1':
+        enableSecondTheme()
+        disableFirstTheme()
+        disableThirdTheme()
+        break
+      case '2':
+        enableThirdTheme()
+        disableFirstTheme()
+        disableSecondTheme()
+        break
     }
   })
 })
@@ -118,8 +151,6 @@ operationButtons.forEach(button => {
 equalsButton.addEventListener('click', () => {
   getResult()
   updateDisplay()
-  /* previousOperandTextElement.textContent = previousOperand
-  currentOperandTextElement.textContent = currentOperand */
 })
 
 resetButton.addEventListener('click', () => {
@@ -133,7 +164,8 @@ deleteButton.addEventListener('click', () => {
 })
 
 function getResult () {
-  if (previousOperand === '' && currentOperand === '') return
+  if (previousOperand === '' || currentOperand === '') return
+  if (previousOperand === '.' || currentOperand === '.') return
   currentOperand = operate(
     operator,
     parseFloat(previousOperand),
@@ -161,7 +193,7 @@ function appendNumber (number) {
 }
 
 function getDisplayNumber (number) {
-  if (typeof number === 'string') {
+  if (number === '∞') {
     return number
   }
   const stringNumber = number.toString()
@@ -194,13 +226,11 @@ function updateDisplay () {
 }
 
 function handleOperator (op) {
-  if (currentOperand === '') return
+  if (currentOperand === '' || currentOperand == '.') return
   if (previousOperand !== '') {
     previousOperand = operate()
     currentOperand = ''
     operator = op
-    /* previousOperandTextElement.textContent = `${previousOperand} ${operator}`
-    currentOperandTextElement.textContent = currentOperand */
   } else {
     operator = op
     previousOperand = currentOperand
